@@ -49255,16 +49255,33 @@ do
                     pressPlay()
 
                     local waited = 0
+                    local nextPlayRetry = math.random(15, 20)
 
-                    while not LocalPlayer.Character and waited < 30 do
+                    while not LocalPlayer.Character and waited < 90 do
                         task.wait(0.25)
 
                         waited += 0.25
+
+                        if not LocalPlayer.Character and waited >= nextPlayRetry then
+                            nextPlayRetry = waited + math.random(15, 20)
+
+                            pcall(pressPlay)
+                        end
                     end
 
                     if not LocalPlayer.Character then
+                        Webhook.text(
+[[Day farm resume: no character after Play - changing server]])
+                        rememberServer()
+
+                        if Serverhop.hop({
+                            strategy = 'smallest',
+                        }) then
+                            return
+                        end
+
                         Webhook.textBounded(
-[[@everyone Day farm resume failed (no character after Play) - kicking bot]])
+[[@everyone Day farm resume failed (no character after Play, serverhop failed) - kicking bot]])
                         Kick.now('sentinel: day farm resume - character never spawned')
 
                         return
