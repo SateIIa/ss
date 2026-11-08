@@ -60578,9 +60578,8 @@ blank: respawns right here]],
                     end
 
                     if not LocalPlayer.Character then
-                        Webhook.textBounded(
-[[@everyone Resume failed (no character after Play) - kicking bot]])
-                        botKick('sentinel: resume - character never spawned')
+                        botLog('Resume: character never spawned after Play - changing server')
+                        trinketBotServerhop('Character never spawned after Play - changing server')
 
                         return
                     end
